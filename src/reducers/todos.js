@@ -1,5 +1,5 @@
 import {
-  ADD
+  ADD, TOGGLE_ACTIVE
 } from '../constants/actiontypes'
 
 const initialState = [
@@ -21,6 +21,12 @@ export default function todos(state = initialState, action) {
           id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1
         }
       ]
+    case TOGGLE_ACTIVE:
+      return state.map(todo =>
+        todo.id === action.id ?
+          { ...todo, completed: !todo.completed } :
+          todo
+      )
     default:
       return state
   }

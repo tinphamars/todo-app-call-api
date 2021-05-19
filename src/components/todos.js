@@ -4,8 +4,7 @@ import Todo from './todo';
 class Todos extends Component {
 
     render() {
-        var  list = this.props.todoList;
-        console.log(this.props)
+        var list = this.props.todoList;
         return (
             <div>
                 {

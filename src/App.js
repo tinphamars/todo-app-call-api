@@ -11,13 +11,13 @@ class App extends React.Component {
     }
 
     const handleActive = (id) => {
-      console.log('toggle active', id)
+      this.props.actions.toggleActive(id)
     }
 
     return (
       <div className="App">
         <InputTodo placeholderInput={'Enter to add todo ... '} save={handelRight} />
-        <Todos todoList={this.props.todos} toggleActive={handleActive}/>
+        <Todos todoList={this.props.todos} toggleActive={handleActive} />
       </div>
     );
   }
