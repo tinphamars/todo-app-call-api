@@ -6,6 +6,7 @@ import InputTodo from './components/inputTodo';
 class App extends React.Component {
 
   render() {
+
     const handelRight = (text) => {
       this.props.actions.addTodo(text)
     }
@@ -14,10 +15,14 @@ class App extends React.Component {
       this.props.actions.toggleActive(id)
     }
 
+    const removeItemTodo = (id) => {
+      this.props.actions.removeTodoItem(id)
+    }
+
     return (
-      <div className="App">
+      <div className="container">
         <InputTodo placeholderInput={'Enter to add todo ... '} save={handelRight} />
-        <Todos todoList={this.props.todos} toggleActive={handleActive} />
+        <Todos todoList={this.props.todos} toggleActive={handleActive} removeItemTodo={removeItemTodo} />
       </div>
     );
   }

@@ -6,9 +6,9 @@ class Todos extends Component {
     render() {
         var list = this.props.todoList;
         return (
-            <div>
+            <div className="todo_list">
                 {
-                    list.map(item => <Todo key={item.id} todo={item} toggleActive={this.props.toggleActive} />)
+                    list.map(item => <Todo key={item.id} todo={item} toggleActive={this.props.toggleActive} removeItemTodo={this.props.removeItemTodo} />)
                 }
             </div>
         );

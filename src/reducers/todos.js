@@ -1,12 +1,22 @@
 import {
-  ADD, TOGGLE_ACTIVE
+  ADD, TOGGLE_ACTIVE, REMOVE_ITEM
 } from '../constants/actiontypes'
 
 const initialState = [
   {
-    text: 'Use Redux',
+    text: 'GO TO THE BED',
     completed: false,
     id: 1
+  },
+  {
+    text: 'COOK',
+    completed: true,
+    id: 2
+  },
+  {
+    text: 'STUDY',
+    completed: false,
+    id: 3
   }
 ]
 
@@ -16,7 +26,7 @@ export default function todos(state = initialState, action) {
       return [
         ...state,
         {
-          text: action.text,
+          text: action.text.toUpperCase(),
           completed: true,
           id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1
         }
@@ -26,6 +36,11 @@ export default function todos(state = initialState, action) {
         todo.id === action.id ?
           { ...todo, completed: !todo.completed } :
           todo
+      )
+
+    case REMOVE_ITEM:
+      return state.filter(todo =>
+        todo.id !== action.id
       )
     default:
       return state

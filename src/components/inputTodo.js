@@ -19,15 +19,13 @@ class InputTodo extends Component {
 
     render() {
         return (
-            <div className="col-md-3">
-                <div className="mb-3">
-                    <input type="text"
-                        className="form-control"
-                        value={this.state.text}
-                        onChange={this.handelChangInput}
-                        onKeyDown={this.handleSubmit}
-                        placeholder={this.props.placeholderInput} />
-                </div>
+            <div className="mb-3 input-todo">
+                <input type="text"
+                    className="form-control"
+                    value={this.state.text}
+                    onChange={this.handelChangInput}
+                    onKeyDown={this.handleSubmit}
+                    placeholder={this.props.placeholderInput} />
             </div>
         );
     }
