@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Todos from './components/todos';
 import InputTodo from './components/inputTodo';
+import Banner from './components/Banner';
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
 
     return (
       <div className="container">
+        <Banner />
         <InputTodo placeholderInput={'Enter to add todo ... '} save={handelRight} />
         <Todos todoList={this.props.todos} toggleActive={handleActive} removeItemTodo={removeItemTodo} />
       </div>
