@@ -23,7 +23,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Banner />
-        <InputTodo placeholderInput={'Enter to add todo ... '} save={handelRight} />
+        <InputTodo placeholderInput={'Enter to add a todo ... '} save={handelRight} />
         <Todos todoList={this.props.todos} toggleActive={handleActive} removeItemTodo={removeItemTodo} />
       </div>
     );
